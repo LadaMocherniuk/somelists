@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import styles from './TaskEditor.module.css';
 import PrioritySelector from './PrioritySelector';
 import Priority from './Priority';
@@ -8,6 +9,9 @@ const options = Object.values(Priority);
 
 
 export default class TaskEditor extends Component{
+    static propTypes = {
+        onAddTask: PropTypes.func.isRequired,
+      };
     state = {
         text: '',
         priority: Priority.HIGH,
